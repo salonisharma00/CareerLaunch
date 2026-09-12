@@ -1,0 +1,208 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ question.title }} | CareerLaunch</title>
+
+    <link rel="stylesheet"
+          href="{% static 'placement/css/style.css' %}">
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <h1>💻 Coding Challenge</h1>
+
+        <p>
+            Test your problem-solving skills and prepare for technical interviews.
+        </p>
+
+    </header>
+
+
+    <main class="coding-challenge-page">
+
+
+        <!-- CHALLENGE HEADER -->
+
+        <section class="challenge-header">
+
+            <div>
+
+                <span class="challenge-label">
+                    CODING CHALLENGE
+                </span>
+
+                <h2>
+                    {{ question.title }}
+                </h2>
+
+                <p>
+                    Solve the problem and submit your answer.
+                </p>
+
+            </div>
+
+
+            <div class="challenge-meta">
+
+                <span>
+                    🎯 {{ question.get_difficulty_display }}
+                </span>
+
+                <span>
+                    💻 {{ question.get_language_display }}
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PROBLEM DESCRIPTION -->
+
+        <section class="challenge-section">
+
+            <h3>📋 Problem Description</h3>
+
+            <p>
+                {{ question.description }}
+            </p>
+
+
+            {% if question.example_input %}
+
+                <div class="example-box">
+
+                    <h4>Example Input</h4>
+
+                    <pre>{{ question.example_input }}</pre>
+
+                </div>
+
+            {% endif %}
+
+
+            {% if question.example_output %}
+
+                <div class="example-box">
+
+                    <h4>Example Output</h4>
+
+                    <pre>{{ question.example_output }}</pre>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+
+        <!-- ANSWER AREA -->
+
+        <section class="challenge-section">
+
+            <div class="solution-heading">
+
+                <div>
+
+                    <h3>⌨️ Your Solution</h3>
+
+                    <p>
+                        Enter your answer below.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <textarea
+                    name="code"
+                    rows="18"
+                    class="code-editor"
+                    placeholder="Enter your answer here..."></textarea>
+
+
+                <button
+                    type="submit"
+                    class="submit-solution-btn">
+
+                    ▶ Submit Solution
+
+                </button>
+
+            </form>
+
+
+
+            <!-- RESULT -->
+
+            {% if result == 'correct' %}
+
+                <div class="result-success">
+
+                    <h2>🎉 Correct!</h2>
+
+                    <p>
+                        Excellent work! Your answer matches the expected answer.
+                    </p>
+
+                </div>
+
+            {% elif result == 'incorrect' %}
+
+                <div class="result-error">
+
+                    <h2>❌ Incorrect</h2>
+
+                    <p>
+                        Your answer does not match the expected answer.
+                        Try again!
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+
+        <!-- BACK BUTTON -->
+
+        <div class="challenge-navigation">
+
+            <a href="{% url 'coding' %}"
+               class="back-coding-btn">
+
+                ← Back to Coding Questions
+
+            </a>
+
+        </div>
+
+
+    </main>
+
+</body>
+
+</html>

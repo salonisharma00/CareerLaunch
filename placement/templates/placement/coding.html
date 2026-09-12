@@ -1,0 +1,150 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Coding Preparation | CareerLaunch</title>
+
+<link rel="stylesheet"
+      href="{% static 'placement/css/style.css' %}">
+
+
+</head>
+
+<body>
+
+
+<header>
+
+    <h1>💻 Coding Preparation</h1>
+
+    <p>
+        Practice coding problems and strengthen your
+        programming skills for placements.
+    </p>
+
+</header>
+
+
+
+<main>
+
+
+    {% if coding_questions %}
+
+
+        {% for question in coding_questions %}
+
+           <section class="coding-card">
+
+    <div class="coding-card-top">
+
+        <span class="coding-number">
+            Problem {{ forloop.counter }}
+        </span>
+
+        <span class="coding-language">
+            {{ question.get_language_display }}
+        </span>
+
+    </div>
+
+    <h2>
+        {{ question.title }}
+    </h2>
+
+                <p>
+                    {{ question.description }}
+                </p>
+
+              <div class="coding-meta">
+
+    <span class="difficulty-badge difficulty-{{ question.difficulty }}">
+        {{ question.get_difficulty_display }}
+    </span>
+
+</div>
+
+                <p>
+                    <strong>Language:</strong>
+                    {{ question.get_language_display }}
+                </p>
+
+                {% if question.example_input %}
+
+                    <p>
+                        <strong>Example Input:</strong>
+                    </p>
+
+                    <pre>{{ question.example_input }}</pre>
+
+                {% endif %}
+
+
+                {% if question.example_output %}
+
+                    <p>
+                        <strong>Example Output:</strong>
+                    </p>
+
+                    <pre>{{ question.example_output }}</pre>
+
+                {% endif %}
+
+          <a href="{% url 'coding_challenge' question.id %}"
+              class="login-btn">
+
+                 Solve Challenge →
+
+          </a>
+                
+
+            </section>
+
+        {% endfor %}
+
+
+    {% else %}
+
+        <section class="menu-card">
+
+            <h2>No Coding Questions Yet</h2>
+
+            <p>
+                Coding practice questions will appear here
+                once they are added by the administrator.
+            </p>
+
+        </section>
+
+    {% endif %}
+
+
+
+    <div style="text-align: center; margin-top: 30px;">
+
+        <a href="{% url 'dashboard' %}"
+           class="login-btn">
+
+            ← Back to Dashboard
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+</body>
+
+</html>

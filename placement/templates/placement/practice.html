@@ -1,0 +1,248 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Aptitude Practice | CareerLaunch</title>
+
+<link rel="stylesheet"
+      href="{% static 'placement/css/style.css' %}">
+
+
+</head>
+
+<body>
+
+
+<header>
+    <h1>🧮 Aptitude Practice</h1>
+    <p>Test your placement aptitude skills.</p>
+</header>
+
+<main>
+
+    <div class="menu-card">
+
+    <h1>📝 Aptitude Practice Test</h1>
+
+    <p>
+        Choose a category and difficulty level to start practicing.
+    </p>
+
+     <p>
+        <strong>Category:</strong>
+        {{ category|title }}
+        &nbsp; | &nbsp;
+        <strong>Difficulty:</strong>
+        {{ difficulty|title }}
+    </p>
+
+</div>
+
+{% if score is None %}
+
+   <div class="timer-card">
+
+        <h2>⏱️ Time Remaining</h2>
+
+        <h1 id="timer">10:00</h1>
+
+    </div>
+
+{% endif %}
+
+    <div class="btn-container">
+
+    <a href="{% url 'practice' %}" class="filter-btn">
+        All
+    </a>
+
+ <a href="{% url 'practice' %}?category=quantitative" class="filter-btn">
+    Quantitative
+</a>
+
+<a href="{% url 'practice' %}?category=logical" class="filter-btn">
+    Logical
+</a>
+
+<a href="{% url 'practice' %}?category=verbal" class="filter-btn">
+    Verbal
+</a>
+
+</div>
+
+<div class="btn-container">
+
+    <a href="{% url 'practice' %}?category={{ category }}"
+       class="filter-btn">
+        All Levels
+    </a>
+
+    <a href="{% url 'practice' %}?category={{ category }}&difficulty=easy"
+       class="filter-btn">
+        Easy
+    </a>
+
+    <a href="{% url 'practice' %}?category={{ category }}&difficulty=medium"
+       class="filter-btn">
+        Medium
+    </a>
+
+    <a href="{% url 'practice' %}?category={{ category }}&difficulty=hard"
+       class="filter-btn">
+        Hard
+    </a>
+
+</div>
+
+
+
+   {% if score is not None %}
+
+    <section class="result-card">
+
+        <div class="result-icon">
+            🏆
+        </div>
+
+        <div class="result-content">
+
+            <span class="result-label">
+                TEST COMPLETED
+            </span>
+
+            <h2>Your Aptitude Test Result</h2>
+
+            <div class="score-display">
+                <span class="score-number">{{ score }}</span>
+                <span class="score-divider">/</span>
+                <span class="score-total">{{ total }}</span>
+            </div>
+
+            <p class="result-message">
+                Great effort! Review your performance and keep practicing.
+            </p>
+
+            <a href="{% url 'practice' %}" class="result-btn">
+                🔄 Take Test Again
+            </a>
+
+        </div>
+
+    </section>
+
+{% endif %}
+
+<section class="test-container">
+
+   <form method="POST" id="aptitude-form">
+
+        {% csrf_token %}
+
+        {% for question in questions %}
+
+           <div class="question-card">
+
+    <div class="question-number">
+        Question {{ forloop.counter }}
+    </div>
+
+    <h2>
+        {{ question.question }}
+    </h2>
+
+               <label class="answer-option">
+    <input type="radio"
+           name="question_{{ question.id }}"
+           value="A"
+           required>
+    <span class="option-letter">A</span>
+    <span>{{ question.option_a }}</span>
+</label>
+
+<label class="answer-option">
+    <input type="radio"
+           name="question_{{ question.id }}"
+           value="B">
+    <span class="option-letter">B</span>
+    <span>{{ question.option_b }}</span>
+</label>
+
+<label class="answer-option">
+    <input type="radio"
+           name="question_{{ question.id }}"
+           value="C">
+    <span class="option-letter">C</span>
+    <span>{{ question.option_c }}</span>
+</label>
+
+<label class="answer-option">
+    <input type="radio"
+           name="question_{{ question.id }}"
+           value="D">
+    <span class="option-letter">D</span>
+    <span>{{ question.option_d }}</span>
+</label>
+
+        {% empty %}
+
+            <h2>No questions available</h2>
+
+            <p>
+                Please check back later for new aptitude questions.
+            </p>
+
+        {% endfor %}
+
+        <button type="submit" class="login-btn">
+            Submit Test
+        </button>
+
+    </form>
+
+</section>
+
+</main>
+
+<script>
+
+    const timer = document.getElementById("timer");
+
+    if (timer) {
+
+        let timeLeft = 10 * 60;
+
+        const countdown = setInterval(function () {
+
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            timer.textContent = minutes + ":" + seconds;
+
+            if (timeLeft <= 0) {
+
+                clearInterval(countdown);
+
+                alert("⏰ Time is up! Your test will be submitted.");
+
+                document.getElementById("aptitude-form").submit();
+
+            }
+
+            timeLeft--;
+
+        }, 1000);
+
+    }
+
+</script>
+
+</body>
+</html>

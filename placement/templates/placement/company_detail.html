@@ -1,0 +1,324 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ company.name }} Preparation | CareerLaunch</title>
+
+<link rel="stylesheet"
+      href="{% static 'placement/css/style.css' %}">
+
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+<header class="company-detail-header">
+
+<div class="company-detail-icon">
+    <i class="bi bi-building-fill"></i>
+</div>
+
+<span class="company-detail-label">
+    COMPANY PREPARATION
+</span>
+
+<h1>{{ company.name }}</h1>
+
+<p>
+    Complete placement preparation for {{ company.name }}
+</p>
+
+</header>
+
+<main class="company-detail-page">
+
+<!-- COMPANY OVERVIEW -->
+
+<section class="detail-card">
+
+    <div class="detail-icon">
+        <i class="bi bi-bullseye"></i>
+    </div>
+
+    <div class="detail-content">
+
+        <span class="detail-label">01 · OVERVIEW</span>
+
+        <h2>Company Overview</h2>
+
+        <p>
+            {{ company.description|default:"Prepare strategically for this company's placement process with aptitude, coding, technical and interview preparation." }}
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ELIGIBILITY -->
+
+<section class="detail-card">
+
+    <div class="detail-icon">
+        <i class="bi bi-mortarboard-fill"></i>
+    </div>
+
+    <div class="detail-content">
+
+        <span class="detail-label">02 · ELIGIBILITY</span>
+
+        <h2>Eligibility</h2>
+
+        <p>
+            {{ company.eligibility|default:"Eligibility information will be updated soon." }}
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- REQUIRED SKILLS -->
+
+<section class="detail-card">
+
+    <div class="detail-icon">
+        <i class="bi bi-code-slash"></i>
+    </div>
+
+    <div class="detail-content">
+
+        <span class="detail-label">03 · SKILLS</span>
+
+        <h2>Required Skills</h2>
+
+        <p>
+            {{ company.skills|default:"Required skills information will be updated soon." }}
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- INTERVIEW ROUNDS -->
+
+<section class="detail-card">
+
+    <div class="detail-icon">
+        <i class="bi bi-diagram-3-fill"></i>
+    </div>
+
+    <div class="detail-content">
+
+        <span class="detail-label">04 · PROCESS</span>
+
+        <h2>Interview Rounds</h2>
+
+        <p>
+            {{ company.interview_rounds|default:"Interview round information will be updated soon." }}
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PREPARATION TIPS -->
+
+<section class="detail-card">
+
+    <div class="detail-icon">
+        <i class="bi bi-lightbulb-fill"></i>
+    </div>
+
+    <div class="detail-content">
+
+        <span class="detail-label">05 · STRATEGY</span>
+
+        <h2>Preparation Tips</h2>
+
+        <p>
+            {{ company.preparation_tips|default:"Preparation tips will be updated soon." }}
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PREPARATION DASHBOARD -->
+
+<section class="preparation-heading">
+
+    <span class="preparation-badge">
+        <i class="bi bi-rocket-takeoff-fill"></i>
+        YOUR PREPARATION
+    </span>
+
+    <h2>Build Your Placement Readiness</h2>
+
+    <p>
+        Choose a preparation area below and start improving
+        your skills for {{ company.name }}.
+    </p>
+
+</section>
+
+
+<div class="preparation-grid">
+
+
+    <!-- APTITUDE -->
+
+    <section class="preparation-card">
+
+        <div class="preparation-card-icon aptitude-icon">
+            <i class="bi bi-calculator-fill"></i>
+        </div>
+
+        <span class="preparation-card-label">
+            APTITUDE
+        </span>
+
+        <h2>Aptitude Practice</h2>
+
+        <p>
+            Practice quantitative aptitude, logical reasoning,
+            and verbal ability questions.
+        </p>
+
+        <a href="{% url 'practice' %}"
+           class="preparation-btn">
+
+            Start Practice
+            <i class="bi bi-arrow-right"></i>
+
+        </a>
+
+    </section>
+
+
+    <!-- CODING -->
+
+    <section class="preparation-card">
+
+        <div class="preparation-card-icon coding-icon">
+            <i class="bi bi-code-square"></i>
+        </div>
+
+        <span class="preparation-card-label">
+            CODING
+        </span>
+
+        <h2>Coding Practice</h2>
+
+        <p>
+            Improve programming fundamentals, algorithms,
+            data structures, and problem-solving skills.
+        </p>
+
+        <a href="{% url 'coding' %}"
+           class="preparation-btn">
+
+            Start Coding
+            <i class="bi bi-arrow-right"></i>
+
+        </a>
+
+    </section>
+
+
+    <!-- TECHNICAL -->
+
+    <section class="preparation-card">
+
+        <div class="preparation-card-icon technical-icon">
+            <i class="bi bi-cpu-fill"></i>
+        </div>
+
+        <span class="preparation-card-label">
+            TECHNICAL
+        </span>
+
+        <h2>Technical Interview</h2>
+
+        <p>
+            Prepare for DBMS, OOP, operating systems,
+            networking, and other technical concepts.
+        </p>
+
+        <a href="{% url 'technical' %}"
+           class="preparation-btn">
+
+            Start Technical
+            <i class="bi bi-arrow-right"></i>
+
+        </a>
+
+    </section>
+
+
+    <!-- HR -->
+
+    <section class="preparation-card coming-soon-card">
+
+        <div class="preparation-card-icon hr-icon">
+            <i class="bi bi-mic-fill"></i>
+        </div>
+
+        <span class="preparation-card-label">
+            HR INTERVIEW
+        </span>
+
+        <h2>HR Interview</h2>
+
+        <p>
+            Practice frequently asked HR questions,
+            improve communication, and build confidence.
+        </p>
+        
+<button type="button" class="preparation-btn coming-soon-btn">
+    <i class="bi bi-person-badge-fill"></i>
+    HR Preparation
+</button>
+
+    </section>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<div class="company-detail-navigation">
+
+    <a href="{% url 'companies' %}"
+       class="back-detail-btn">
+
+        <i class="bi bi-arrow-left"></i>
+        Back to Companies
+
+    </a>
+
+    <a href="{% url 'dashboard' %}"
+       class="dashboard-detail-btn">
+
+        <i class="bi bi-grid-1x2-fill"></i>
+        Dashboard
+
+    </a>
+
+</div>
+
+</main>
+
+</body>
+</html>

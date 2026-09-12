@@ -1,0 +1,87 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aptitude Preparation | CareerLaunch</title>
+
+    <link rel="stylesheet"
+          href="{% static 'placement/css/style.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <h1>🧮 Aptitude Preparation</h1>
+        <p>Practice aptitude questions and improve your placement readiness.</p>
+    </header>
+
+    <main>
+
+       <section class="menu-card aptitude-card">
+
+
+        <div class="aptitude-icon">
+           <i class="bi bi-calculator"></i>
+        </div>
+
+            <h2>Quantitative Aptitude</h2>
+
+            <p>
+                Strengthen your skills in percentages, profit & loss,
+                averages, ratios, time & work, and more.
+            </p>
+
+             <a href="{% url 'practice' %}" class="login-btn">
+         Practice
+    </a>
+
+        </section>
+
+        <section class="menu-card aptitude-card">
+
+            <div class="aptitude-icon">
+                 <i class="bi bi-puzzle"></i>
+            </div>
+
+            <h2>Logical Reasoning</h2>
+
+            <p>
+                Practice logical reasoning, patterns, puzzles,
+                series, and analytical questions.
+            </p>
+
+           <a href="{% url 'practice' %}?category=logical" class="login-btn">
+    Start Practice
+</a>
+
+        </section>
+
+        <section class="menu-card aptitude-card">
+
+          <div class="aptitude-icon">
+             <i class="bi bi-chat-square-text"></i>
+          </div>
+
+            <h2>Verbal Ability</h2>
+
+            <p>
+                Improve grammar, vocabulary, reading comprehension,
+                and verbal reasoning.
+            </p>
+            
+<a href="{% url 'practice' %}?category=verbal" class="login-btn">
+    Start Practice
+</a>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
+

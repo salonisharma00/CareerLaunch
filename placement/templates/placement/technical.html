@@ -1,0 +1,202 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Technical Interview | CareerLaunch</title>
+
+    <link rel="stylesheet"
+          href="{% static 'placement/css/style.css' %}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🧠 Technical Interview Preparation</h1>
+
+    <p>
+        Strengthen your technical knowledge for placement interviews.
+    </p>
+
+</header>
+
+<main>
+
+       <!-- FILTERS -->
+
+<section class="menu-card">
+
+    <h2>🔎 Filter Questions</h2>
+
+    <div style="text-align: center; margin-top: 15px;">
+
+        <button class="login-btn"
+                onclick="filterQuestions('all')">
+            All
+        </button>
+
+        <button class="login-btn"
+                onclick="filterQuestions('dbms')">
+            DBMS
+        </button>
+
+        <button class="login-btn"
+                onclick="filterQuestions('oops')">
+            OOP
+        </button>
+
+        <button class="login-btn"
+                onclick="filterQuestions('os')">
+            Operating Systems
+        </button>
+
+        <button class="login-btn"
+                onclick="filterQuestions('cn')">
+            Computer Networks
+        </button>
+      
+        <button class="login-btn"
+               onclick="filterDifficulty('easy')">
+            🟢 Easy
+       </button>
+
+       <button class="login-btn"
+                onclick="filterDifficulty('medium')">
+           🟡 Medium
+      </button>
+
+      <button class="login-btn"
+        onclick="filterDifficulty('hard')">
+          🔴 Hard
+      </button>
+
+    </div>
+
+</section>
+    
+
+    {% if questions %}
+
+        {% for question in questions %}
+
+           <section class="menu-card technical-question"
+         data-category="{{ question.category|lower }}"
+         data-difficulty="{{ question.difficulty|lower }}">
+
+                <h2>
+                    {{ forloop.counter }}. {{ question.question }}
+                </h2>
+
+                <p>
+                    <strong>Category:</strong>
+                    {{ question.get_category_display }}
+                </p>
+
+                <p>
+                    <strong>Difficulty:</strong>
+                    {{ question.get_difficulty_display }}
+                </p>
+
+                <details>
+
+                    <summary>
+                        💡 Show Answer
+                    </summary>
+
+                    <p>
+                        {{ question.answer }}
+                    </p>
+
+                </details>
+
+            </section>
+
+        {% endfor %}
+
+    {% else %}
+
+        <section class="menu-card">
+
+            <h2>No Technical Questions Available</h2>
+
+            <p>
+                Technical interview questions will be added soon.
+            </p>
+
+        </section>
+
+    {% endif %}
+
+    <div style="text-align: center; margin-top: 30px;">
+
+        <a href="{% url 'dashboard' %}"
+           class="login-btn">
+
+            ← Back to Dashboard
+
+        </a>
+
+    </div>
+
+</main>
+
+<script>
+
+function filterQuestions(category) {
+
+    const questions = document.querySelectorAll(
+        '.technical-question'
+    );
+
+    questions.forEach(function(question) {
+
+          if (
+           category === 'all' ||
+           question.dataset.category.trim().toLowerCase() === category
+             ) {
+
+            question.style.display = 'block';
+
+        } else {
+
+            question.style.display = 'none';
+
+        }
+
+    });
+}     
+ function filterDifficulty(difficulty) {
+
+    const questions = document.querySelectorAll(
+        '.technical-question'
+    );
+
+    questions.forEach(function(question) {
+
+        if (
+            question.dataset.difficulty.trim().toLowerCase() === difficulty
+        ) {
+
+            question.style.display = 'block';
+
+        } else {
+
+            question.style.display = 'none';
+        }
+    });
+}
+
+
+</script>
+</body>
+
+</html>

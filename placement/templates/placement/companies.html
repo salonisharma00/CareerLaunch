@@ -1,0 +1,128 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Company Preparation | CareerLaunch</title>
+
+<link rel="stylesheet"
+      href="{% static 'placement/css/style.css' %}">
+
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🏢 Company Preparation</h1>
+
+
+<p>
+    Prepare for top companies with focused
+    placement resources.
+</p>
+
+
+</header>
+
+<main class="companies-page">
+
+
+<div class="companies-intro">
+    <span class="companies-badge">
+        <i class="bi bi-buildings-fill"></i>
+        COMPANY READINESS
+    </span>
+
+    <h2>Choose Your Target Company</h2>
+
+    <p>
+        Explore company-specific eligibility, required skills,
+        interview rounds and preparation strategies.
+    </p>
+</div>
+
+{% if companies %}
+
+    <div class="companies-grid">
+
+        {% for company in companies %}
+
+            <section class="company-prep-card">
+
+                <div class="company-card-icon">
+                    <i class="bi bi-building-fill"></i>
+                </div>
+
+                <div class="company-card-content">
+
+                    <span class="company-card-label">
+                        PLACEMENT PREPARATION
+                    </span>
+
+                    <h2>
+                        {{ company.name }}
+                    </h2>
+
+                    <p>
+                        {{ company.description|default:"Prepare for this company's placement process with aptitude, coding, technical and interview practice." }}
+                    </p>
+
+                    <a href="{% url 'company_detail' company.id %}"
+                       class="company-prep-btn">
+
+                        Start Preparation
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        {% endfor %}
+
+    </div>
+
+{% else %}
+
+    <section class="menu-card">
+
+        <h2>
+            No Companies Added Yet
+        </h2>
+
+        <p>
+            Company preparation resources will appear
+            here once companies are added by the administrator.
+        </p>
+
+    </section>
+
+{% endif %}
+
+<div class="company-back">
+
+    <a href="{% url 'dashboard' %}"
+       class="back-dashboard-btn">
+
+        <i class="bi bi-arrow-left"></i>
+        Back to Dashboard
+
+    </a>
+
+</div>
+
+
+</main>
+
+</body>
+</html>

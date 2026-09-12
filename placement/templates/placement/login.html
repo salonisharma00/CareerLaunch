@@ -1,0 +1,314 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Login | CareerLaunch</title>
+
+<link rel="stylesheet" href="{% static 'placement/css/style.css' %}">
+
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+    body {
+        min-height: 100vh;
+        margin: 0;
+        background:
+            radial-gradient(circle at top left, rgba(99, 102, 241, 0.18), transparent 35%),
+            radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.14), transparent 35%),
+            #f8fafc;
+    }
+
+    .login-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+
+    .login-card {
+        position: relative;
+        width: 100%;
+        max-width: 460px;
+        padding: 42px;
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid #e2e8f0;
+        border-radius: 24px;
+        box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
+        overflow: hidden;
+    }
+
+    .login-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, #4f46e5, #7c3aed, #06b6d4);
+    }
+
+    .login-logo {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    .login-icon {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+        color: #4f46e5;
+        font-size: 34px;
+        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.12);
+    }
+
+    .login-logo h2 {
+        margin: 0 0 8px;
+        color: #0f172a;
+        font-size: 1.8rem;
+        font-weight: 800;
+    }
+
+    .login-logo p {
+        margin: 0;
+        color: #64748b;
+        font-size: 0.92rem;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 8px;
+        color: #334155;
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+
+    .input-wrapper {
+        position: relative;
+    }
+
+    .input-wrapper i {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #94a3b8;
+        font-size: 1rem;
+    }
+
+    .form-control {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 13px 15px 13px 43px;
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+        background: #f8fafc;
+        color: #0f172a;
+        font-size: 0.95rem;
+        outline: none;
+        transition: border-color 0.2s ease,
+                    box-shadow 0.2s ease,
+                    background 0.2s ease;
+    }
+
+    .form-control::placeholder {
+        color: #94a3b8;
+    }
+
+    .form-control:focus {
+        background: white;
+        border-color: #6366f1;
+        box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+    }
+
+    .login-btn {
+        width: 100%;
+        padding: 14px;
+        margin-top: 4px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: white;
+        font-size: 1rem;
+        font-weight: 750;
+        cursor: pointer;
+        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.22);
+        transition: transform 0.2s ease,
+                    box-shadow 0.2s ease;
+    }
+
+    .login-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 32px rgba(79, 70, 229, 0.30);
+    }
+
+    .register-link {
+        margin-top: 25px;
+        padding-top: 22px;
+        border-top: 1px solid #e2e8f0;
+        text-align: center;
+        color: #64748b;
+        font-size: 0.9rem;
+    }
+
+    .register-link a {
+        color: #4f46e5;
+        text-decoration: none;
+        font-weight: 750;
+    }
+
+    .register-link a:hover {
+        color: #3730a3;
+        text-decoration: underline;
+    }
+
+    .error-message {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 22px;
+        padding: 13px 15px;
+        border: 1px solid #fecaca;
+        border-radius: 12px;
+        background: #fef2f2;
+        color: #b91c1c;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .login-footer {
+        margin-top: 20px;
+        text-align: center;
+        color: #94a3b8;
+        font-size: 0.78rem;
+    }
+
+    @media (max-width: 520px) {
+        .login-section {
+            padding: 25px 15px;
+        }
+
+        .login-card {
+            padding: 32px 24px;
+            border-radius: 20px;
+        }
+
+        .login-logo h2 {
+            font-size: 1.55rem;
+        }
+    }
+</style>
+
+
+</head>
+
+<body>
+
+<section class="login-section">
+
+
+<div class="login-card">
+
+    <div class="login-logo">
+
+        <div class="login-icon">
+            <i class="bi bi-rocket-takeoff-fill"></i>
+        </div>
+
+        <h2>Welcome Back</h2>
+
+        <p>Login to continue your placement journey</p>
+
+    </div>
+
+    {% if error %}
+        <div class="error-message">
+            <i class="bi bi-exclamation-circle-fill"></i>
+            <span>{{ error }}</span>
+        </div>
+    {% endif %}
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <div class="form-group">
+
+            <label class="form-label">Username</label>
+
+            <div class="input-wrapper">
+                <i class="bi bi-person-fill"></i>
+
+                <input
+                    type="text"
+                    name="username"
+                    class="form-control"
+                    placeholder="Enter your username"
+                    required
+                >
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <label class="form-label">Password</label>
+
+            <div class="input-wrapper">
+                <i class="bi bi-lock-fill"></i>
+
+                <input
+                    type="password"
+                    name="password"
+                    class="form-control"
+                    placeholder="Enter your password"
+                    required
+                >
+            </div>
+
+        </div>
+
+        <button type="submit" class="login-btn">
+            <i class="bi bi-box-arrow-in-right"></i>
+            Login to CareerLaunch
+        </button>
+
+    </form>
+
+    <div class="register-link">
+
+        Don't have an account?
+
+        <a href="{% url 'register' %}">
+            Create Account
+        </a>
+
+    </div>
+
+    <div class="login-footer">
+        <i class="bi bi-shield-check"></i>
+        Secure placement preparation platform
+    </div>
+
+</div>
+
+</section>
+
+</body>
+</html>
