@@ -1,0 +1,81 @@
+[
+{
+  "model": "placement.aptitudequestion",
+  "pk": 1,
+  "fields": {
+    "question": "what is 20% of 500?",
+    "option_a": "50",
+    "option_b": "100",
+    "option_c": "150",
+    "option_d": "200",
+    "correct_answer": "B",
+    "category": "quantitative",
+    "difficulty": "easy",
+    "created_at": "2026-09-03T16:33:43.499Z"
+  }
+},
+{
+  "model": "placement.aptitudequestion",
+  "pk": 2,
+  "fields": {
+    "question": "If a number is increased by 20% and becomes 120, what was the original number?",
+    "option_a": "80",
+    "option_b": "90",
+    "option_c": "100",
+    "option_d": "110",
+    "correct_answer": "C",
+    "category": "quantitative",
+    "difficulty": "easy",
+    "created_at": "2026-09-04T11:12:26.343Z"
+  }
+},
+{
+  "model": "placement.aptitudequestion",
+  "pk": 3,
+  "fields": {
+    "question": "What comes next in the series: 2, 4, 8, 16, ?",
+    "option_a": "24",
+    "option_b": "30",
+    "option_c": "32",
+    "option_d": "36",
+    "correct_answer": "C",
+    "category": "logical",
+    "difficulty": "easy",
+    "created_at": "2026-09-04T11:16:51.240Z"
+  }
+},
+{
+  "model": "placement.aptitudequestion",
+  "pk": 4,
+  "fields": {
+    "question": "Choose the word that is closest in meaning to \"Rapid\".",
+    "option_a": "Slow",
+    "option_b": "Fast",
+    "option_c": "Weak",
+    "option_d": "Late",
+    "correct_answer": "B",
+    "category": "verbal",
+    "difficulty": "easy",
+    "created_at": "2026-09-04T11:18:53.578Z"
+  }
+},
+{
+  "model": "placement.aptitudequestion",
+  "pk": 5,
+  "fields": {
+    "question": "A train travels 60 km in 1 hour. How far will it travel in 3 hours?",
+    "option_a": "120km",
+    "option_b": "150km",
+    "option_c": "180km",
+    "option_d": "200km",
+    "correct_answer": "C",
+    "category": "quantitative",
+    "difficulty": "easy",
+    "created_at": "2026-09-04T11:20:38.492Z"
+  }
+},
+{
+  "model": "placement.aptitudequestion",
+  "pk": 6,
+  "fields": {
+    "question": 
