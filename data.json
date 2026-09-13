@@ -78,4 +78,529 @@
   "model": "placement.aptitudequestion",
   "pk": 6,
   "fields": {
-    "question": 
+    "question": "A shopkeeper buys an item for ₹500 and sells it for ₹600. What is the profit percentage?",
+    "option_a": "10%",
+    "option_b": "15%",
+    "option_c": "20%",
+    "option_d": "25%",
+    "correct_answer": "C",
+    "category": "quantitative",
+    "difficulty": "medium",
+    "created_at": "2026-09-05T08:46:16.642Z"
+  }
+},
+{
+  "model": "placement.aptitudequestion",
+  "pk": 7,
+  "fields": {
+    "question": "If all roses are flowers and some flowers fade quickly, which statement is definitely true?",
+    "option_a": "All roses fade quickly",
+    "option_b": "Some roses fade quickly",
+    "option_c": "All roses are flowers",
+    "option_d": "No roses fade quickly",
+    "correct_answer": "C",
+    "category": "logical",
+    "difficulty": "medium",
+    "created_at": "2026-09-05T08:49:56.915Z"
+  }
+},
+{
+  "model": "placement.aptitudequestion",
+  "pk": 8,
+  "fields": {
+    "question": "A train travels 240 km at a certain speed. If its speed is increased by 20 km/h, it takes 1 hour less to cover the same distance. What is the original speed?",
+    "option_a": "40km/h",
+    "option_b": "50km/h",
+    "option_c": "60km/h",
+    "option_d": "80km/h",
+    "correct_answer": "C",
+    "category": "quantitative",
+    "difficulty": "hard",
+    "created_at": "2026-09-05T08:52:44.982Z"
+  }
+},
+{
+  "model": "placement.aptitudequestion",
+  "pk": 9,
+  "fields": {
+    "question": "Five people A, B, C, D and E are standing in a line. A is taller than B but shorter than C. D is shorter than B but taller than E. Who is the tallest?",
+    "option_a": "A",
+    "option_b": "B",
+    "option_c": "C",
+    "option_d": "D",
+    "correct_answer": "C",
+    "category": "logical",
+    "difficulty": "hard",
+    "created_at": "2026-09-05T08:57:07.666Z"
+  }
+},
+{
+  "model": "placement.aptitudequestion",
+  "pk": 10,
+  "fields": {
+    "question": "Choose the word that is closest in meaning to \"Meticulous\".",
+    "option_a": "Careless",
+    "option_b": "Careful",
+    "option_c": "Quick",
+    "option_d": "Angry",
+    "correct_answer": "B",
+    "category": "verbal",
+    "difficulty": "hard",
+    "created_at": "2026-09-05T08:59:22.384Z"
+  }
+},
+{
+  "model": "placement.testresult",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "category": "all",
+    "difficulty": "all",
+    "score": 10,
+    "total": 10,
+    "percentage": 100.0,
+    "created_at": "2026-09-05T09:51:28.009Z"
+  }
+},
+{
+  "model": "placement.testresult",
+  "pk": 3,
+  "fields": {
+    "user": 3,
+    "category": "logical",
+    "difficulty": "all",
+    "score": 3,
+    "total": 3,
+    "percentage": 100.0,
+    "created_at": "2026-09-06T06:45:53.012Z"
+  }
+},
+{
+  "model": "placement.testresult",
+  "pk": 4,
+  "fields": {
+    "user": 3,
+    "category": "verbal",
+    "difficulty": "all",
+    "score": 2,
+    "total": 2,
+    "percentage": 100.0,
+    "created_at": "2026-09-06T06:46:07.717Z"
+  }
+},
+{
+  "model": "placement.testresult",
+  "pk": 5,
+  "fields": {
+    "user": 3,
+    "category": "all",
+    "difficulty": "all",
+    "score": 9,
+    "total": 10,
+    "percentage": 90.0,
+    "created_at": "2026-09-10T15:12:16.385Z"
+  }
+},
+{
+  "model": "placement.testresult",
+  "pk": 6,
+  "fields": {
+    "user": 3,
+    "category": "all",
+    "difficulty": "all",
+    "score": 10,
+    "total": 10,
+    "percentage": 100.0,
+    "created_at": "2026-09-10T15:53:30.686Z"
+  }
+},
+{
+  "model": "placement.testresult",
+  "pk": 7,
+  "fields": {
+    "user": 4,
+    "category": "all",
+    "difficulty": "all",
+    "score": 10,
+    "total": 10,
+    "percentage": 100.0,
+    "created_at": "2026-09-12T11:44:48.663Z"
+  }
+},
+{
+  "model": "placement.testresult",
+  "pk": 8,
+  "fields": {
+    "user": 4,
+    "category": "verbal",
+    "difficulty": "all",
+    "score": 2,
+    "total": 2,
+    "percentage": 100.0,
+    "created_at": "2026-09-12T11:45:07.692Z"
+  }
+},
+{
+  "model": "placement.testresult",
+  "pk": 9,
+  "fields": {
+    "user": 2,
+    "category": "all",
+    "difficulty": "all",
+    "score": 10,
+    "total": 10,
+    "percentage": 100.0,
+    "created_at": "2026-09-12T12:18:42.942Z"
+  }
+},
+{
+  "model": "placement.company",
+  "pk": 1,
+  "fields": {
+    "name": "TCS",
+    "description": "Tata Consultancy Services — software development, IT services, consulting, and campus placement opportunities.",
+    "eligibility": "",
+    "skills": "",
+    "interview_rounds": "",
+    "preparation_tips": "",
+    "created_at": "2026-09-05T11:20:46.856Z"
+  }
+},
+{
+  "model": "placement.company",
+  "pk": 2,
+  "fields": {
+    "name": "Infosys",
+    "description": "IT services, consulting, software development, and campus placement opportunities.",
+    "eligibility": "",
+    "skills": "",
+    "interview_rounds": "",
+    "preparation_tips": "",
+    "created_at": "2026-09-05T11:21:43.248Z"
+  }
+},
+{
+  "model": "placement.company",
+  "pk": 3,
+  "fields": {
+    "name": "Accenture",
+    "description": "Technology services, consulting, digital transformation, and graduate opportunities.",
+    "eligibility": "",
+    "skills": "",
+    "interview_rounds": "",
+    "preparation_tips": "",
+    "created_at": "2026-09-05T11:22:05.376Z"
+  }
+},
+{
+  "model": "placement.company",
+  "pk": 4,
+  "fields": {
+    "name": "Wipro",
+    "description": "IT services, consulting, cloud, cybersecurity, and campus placement opportunities.",
+    "eligibility": "",
+    "skills": "",
+    "interview_rounds": "",
+    "preparation_tips": "",
+    "created_at": "2026-09-05T11:22:21.322Z"
+  }
+},
+{
+  "model": "placement.company",
+  "pk": 5,
+  "fields": {
+    "name": "Cognizant",
+    "description": "Technology services, digital engineering, consulting, and graduate opportunities.",
+    "eligibility": "",
+    "skills": "",
+    "interview_rounds": "",
+    "preparation_tips": "",
+    "created_at": "2026-09-05T11:22:39.498Z"
+  }
+},
+{
+  "model": "placement.company",
+  "pk": 6,
+  "fields": {
+    "name": "HCLTech",
+    "description": "Technology services, engineering, cloud, cybersecurity, and campus placement opportunities.",
+    "eligibility": "",
+    "skills": "",
+    "interview_rounds": "",
+    "preparation_tips": "",
+    "created_at": "2026-09-05T11:22:58.828Z"
+  }
+},
+{
+  "model": "placement.company",
+  "pk": 7,
+  "fields": {
+    "name": "Capgemini",
+    "description": "Consulting, technology services, engineering, and graduate opportunities.",
+    "eligibility": "",
+    "skills": "",
+    "interview_rounds": "",
+    "preparation_tips": "",
+    "created_at": "2026-09-05T11:23:17.410Z"
+  }
+},
+{
+  "model": "placement.company",
+  "pk": 8,
+  "fields": {
+    "name": "IBM",
+    "description": "Software, cloud, AI, consulting, and technology career opportunities.",
+    "eligibility": "",
+    "skills": "",
+    "interview_rounds": "",
+    "preparation_tips": "",
+    "created_at": "2026-09-05T11:23:34.224Z"
+  }
+},
+{
+  "model": "placement.company",
+  "pk": 9,
+  "fields": {
+    "name": "Deloitte",
+    "description": "Consulting, technology, analytics, and graduate career opportunities.",
+    "eligibility": "",
+    "skills": "",
+    "interview_rounds": "",
+    "preparation_tips": "",
+    "created_at": "2026-09-05T11:23:51.612Z"
+  }
+},
+{
+  "model": "placement.company",
+  "pk": 10,
+  "fields": {
+    "name": "Amazon",
+    "description": "E-commerce, cloud computing, software development, and technology career opportunities.",
+    "eligibility": "",
+    "skills": "",
+    "interview_rounds": "",
+    "preparation_tips": "",
+    "created_at": "2026-09-05T11:24:08.402Z"
+  }
+},
+{
+  "model": "placement.company",
+  "pk": 11,
+  "fields": {
+    "name": "Microsoft",
+    "description": "Software, cloud computing, AI, and technology career opportunities.",
+    "eligibility": "",
+    "skills": "",
+    "interview_rounds": "",
+    "preparation_tips": "",
+    "created_at": "2026-09-05T11:24:23.299Z"
+  }
+},
+{
+  "model": "placement.company",
+  "pk": 12,
+  "fields": {
+    "name": "Google",
+    "description": "Google recruitment focuses on problem-solving, programming fundamentals, data structures, algorithms, technical knowledge, and behavioral skills.",
+    "eligibility": "Typically suitable for students from relevant undergraduate programs. Eligibility, academic requirements, and graduation criteria may vary by role and recruitment drive.",
+    "skills": "Data Structures, Algorithms, Problem Solving, Programming, Object-Oriented Programming, DBMS, Operating Systems, Computer Networks",
+    "interview_rounds": "1. Online Assessment\r\n2. Technical Interviews\r\n3. Problem-Solving / Coding Rounds\r\n4. Behavioral / Googliness Interview",
+    "preparation_tips": "1. Strengthen data structures and algorithms.\r\n2. Practice coding problems regularly.\r\n3. Focus on problem-solving and time complexity.\r\n4. Revise core computer science subjects.\r\n5. Practice explaining your approach clearly during interviews.\r\n6. Prepare behavioral questions using real project and teamwork examples.",
+    "created_at": "2026-09-05T11:24:37.452Z"
+  }
+},
+{
+  "model": "placement.codingquestion",
+  "pk": 1,
+  "fields": {
+    "title": "Find the Largest Element",
+    "description": "Given an array of integers, find and return the largest element in the array.",
+    "difficulty": "easy",
+    "language": "python",
+    "example_input": "[10, 25, 7, 42, 18]",
+    "example_output": "42",
+    "expected_answer": "42",
+    "created_at": "2026-09-05T12:20:53.342Z"
+  }
+},
+{
+  "model": "placement.codingquestion",
+  "pk": 2,
+  "fields": {
+    "title": "Reverse a String",
+    "description": "Given a string, write a program to reverse the string without using a built-in reverse function.",
+    "difficulty": "easy",
+    "language": "java",
+    "example_input": "CareerLaunch",
+    "example_output": "hcnuaLreeraC",
+    "expected_answer": "hcnuaLreeraC",
+    "created_at": "2026-09-05T12:21:49.156Z"
+  }
+},
+{
+  "model": "placement.codingquestion",
+  "pk": 3,
+  "fields": {
+    "title": "Two Sum",
+    "description": "Given an array of integers and a target value, find two numbers in the array whose sum is equal to the target.",
+    "difficulty": "medium",
+    "language": "python",
+    "example_input": "Array: [2, 7, 11, 15]\r\nTarget: 9",
+    "example_output": "[0, 1]",
+    "expected_answer": "[0, 1]",
+    "created_at": "2026-09-05T12:22:29.094Z"
+  }
+},
+{
+  "model": "placement.codingquestion",
+  "pk": 4,
+  "fields": {
+    "title": "Check Palindrome",
+    "description": "Given a string, determine whether it is a palindrome. A palindrome reads the same forward and backward.",
+    "difficulty": "medium",
+    "language": "cpp",
+    "example_input": "madam",
+    "example_output": "Palindrome",
+    "expected_answer": "Palindrome",
+    "created_at": "2026-09-05T12:23:11.016Z"
+  }
+},
+{
+  "model": "placement.codingquestion",
+  "pk": 5,
+  "fields": {
+    "title": "Maximum Subarray Sum",
+    "description": "Given an integer array, find the contiguous subarray with the largest sum and return the maximum sum.",
+    "difficulty": "hard",
+    "language": "python",
+    "example_input": "[-2, 1, -3, 4, -1, 2, 1, -5, 4]",
+    "example_output": "6",
+    "expected_answer": "6",
+    "created_at": "2026-09-05T12:23:48.191Z"
+  }
+},
+{
+  "model": "placement.codingquestion",
+  "pk": 6,
+  "fields": {
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string, find the length of the longest substring that contains no repeating characters.",
+    "difficulty": "hard",
+    "language": "java",
+    "example_input": "abcabcbb",
+    "example_output": "3",
+    "expected_answer": "3",
+    "created_at": "2026-09-05T12:24:34.404Z"
+  }
+},
+{
+  "model": "placement.codingattempt",
+  "pk": 1,
+  "fields": {
+    "user": 3,
+    "question": 1,
+    "submitted_answer": "42",
+    "is_correct": true,
+    "attempted_at": "2026-09-05T17:37:04.916Z"
+  }
+},
+{
+  "model": "placement.codingattempt",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "question": 1,
+    "submitted_answer": "50",
+    "is_correct": false,
+    "attempted_at": "2026-09-05T17:51:35.492Z"
+  }
+},
+{
+  "model": "placement.codingattempt",
+  "pk": 3,
+  "fields": {
+    "user": 4,
+    "question": 1,
+    "submitted_answer": "42",
+    "is_correct": true,
+    "attempted_at": "2026-09-12T11:45:35.049Z"
+  }
+},
+{
+  "model": "placement.codingattempt",
+  "pk": 4,
+  "fields": {
+    "user": 2,
+    "question": 1,
+    "submitted_answer": "42",
+    "is_correct": true,
+    "attempted_at": "2026-09-12T12:19:57.879Z"
+  }
+},
+{
+  "model": "placement.codingattempt",
+  "pk": 5,
+  "fields": {
+    "user": 2,
+    "question": 2,
+    "submitted_answer": "hcnuaLreeraC",
+    "is_correct": true,
+    "attempted_at": "2026-09-12T12:20:15.149Z"
+  }
+},
+{
+  "model": "placement.technicalquestion",
+  "pk": 1,
+  "fields": {
+    "question": "What is a primary key in a database?",
+    "answer": "A primary key is a column or set of columns that uniquely identifies each record in a database table. It cannot contain duplicate or NULL values.",
+    "category": "dbms",
+    "difficulty": "easy",
+    "created_at": "2026-09-08T13:53:58.648Z"
+  }
+},
+{
+  "model": "placement.technicalquestion",
+  "pk": 2,
+  "fields": {
+    "question": "What is the difference between a primary key and a foreign key?",
+    "answer": "A primary key uniquely identifies each record in a table, while a foreign key is a field that creates a relationship between two tables by referencing the primary key of another table.",
+    "category": "dbms",
+    "difficulty": "easy",
+    "created_at": "2026-09-08T14:05:28.602Z"
+  }
+},
+{
+  "model": "placement.technicalquestion",
+  "pk": 3,
+  "fields": {
+    "question": "What is encapsulation in Object-Oriented Programming?",
+    "answer": "Encapsulation is the concept of bundling data and the methods that operate on that data into a single unit, such as a class, while restricting direct access to some of the object's internal details.",
+    "category": "oops",
+    "difficulty": "easy",
+    "created_at": "2026-09-08T14:06:07.293Z"
+  }
+},
+{
+  "model": "placement.technicalquestion",
+  "pk": 4,
+  "fields": {
+    "question": "What is the difference between a process and a thread?",
+    "answer": "A process is an independent program in execution with its own memory space, while a thread is a smaller unit of execution within a process that shares the process's memory and resources.",
+    "category": "os",
+    "difficulty": "easy",
+    "created_at": "2026-09-08T14:06:45.842Z"
+  }
+},
+{
+  "model": "placement.technicalquestion",
+  "pk": 5,
+  "fields": {
+    "question": "What is the difference between HTTP and HTTPS?",
+    "answer": "HTTP transfers data without encryption, while HTTPS uses encryption through TLS to protect data exchanged between the client and server.",
+    "category": "cn",
+    "difficulty": "easy",
+    "created_at": "2026-09-08T14:07:41.273Z"
+  }
+}
+]
